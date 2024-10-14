@@ -1,6 +1,6 @@
 // User login data
 const username = "user123";
-const password = "password123"; // Must be at least 8 characters
+const password = "password123"; 
 
 let loginAttempts = 0;
 
@@ -11,43 +11,43 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const enteredPassword = document.getElementById("password").value;
 
     if (enteredUsername === username && enteredPassword === password) {
-        window.location.href = "products.html"; // Redirect to products page
+        window.location.href = "products.html"; 
     } else {
         loginAttempts++;
         document.getElementById("errorMsg").textContent = "Invalid login. Try again.";
 
         if (loginAttempts >= 3) {
-            window.location.href = "error.html"; // Redirect to error page after 3 attempts
+            window.location.href = "error.html"; 
         }
     }
 });
 
 // Products data
 const products = [
-    { id: 1, name: "Iphone 16", price: 799.99 },
-    { id: 2, name: "ASUS ROG G16 (2024)", price: 1399.99 },
-    { id: 3, name: "Bose QuietComfort Ultra Bluetooth Headphones", price: 429.00 },
-    { id: 4, name: "Apple Watch Ultra 2", price: 734.89 },
-    { id: 5, name: "Samsung Galaxy Tab S10 Ultra", price: 1599.99 },
-    { id: 6, name: "JBL Xtreme 3", price: 329.85 },
-    { id: 7, name: "PlayStation®5", price: 499.00 },
-    { id: 8, name: "DJI Mini 3 Pro", price: 899.99 },
-    { id: 9, name: "SAMSUNG 55-Inch Class Neo QLED", price: 1600.00 }
+    { id: 1, name: "Smartphone", price: 699 },
+    { id: 2, name: "Laptop", price: 999 },
+    { id: 3, name: "Headphones", price: 199 },
+    { id: 4, name: "Smartwatch", price: 299 },
+    { id: 5, name: "Tablet", price: 499 },
+    { id: 6, name: "Bluetooth Speaker", price: 149 },
+    { id: 7, name: "Gaming Console", price: 399 },
+    { id: 8, name: "Drone", price: 799 },
+    { id: 9, name: "Smart TV", price: 1199 }
 ];
 
 // Function to add product to the cart
 function addToCart(productId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || []; // Get the existing cart or create an empty array if null
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const product = products.find(p => p.id === productId);
 
     if (product) {
         cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart)); 
         alert(`${product.name} added to cart!`);
-        console.log("Product added:", product); // Log product for debugging
-        console.log("Cart after adding:", cart); // Log the cart after adding
+        console.log("Product added:", product); 
+        console.log("Cart after adding:", cart); 
     } else {
-        console.error("Product not found:", productId); // Log an error if product not found
+        console.error("Product not found:", productId); 
     }
 }
 
