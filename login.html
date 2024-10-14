@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - TechGear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> 
-    <script src="script.js" defer></script> 
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required placeholder="Enter your username">
-            <br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required placeholder="Enter your password">
-            <br><br>
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
             <button type="submit">Login</button>
+            <p id="errorMsg"></p> 
         </form>
-        <p id="errorMsg"></p>
     </div>
+
+    <script src="script.js"></script> 
 </body>
 </html>
