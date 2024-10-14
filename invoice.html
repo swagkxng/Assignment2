@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - TechGear</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Invoice</h2>
+    <div id="invoiceDetails"></div>
+
+    <!-- Cancel and Exit buttons -->
+    <div class="buttons">
+        <button id="cancelBtn" onclick="cancelCart()">Cancel</button>
+        <button id="exitBtn" onclick="exitPage()">Exit</button>
+    </div>
+
+    <script>
+        // Function to format the current date
+        function formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
+
+        // Products array
+        const products = [
+            { id: 1, name: "Iphone 16", price: 799.99 },
+            { id: 2, name: "ASUS ROG G16 (2024)", price: 1399.99 },
+            { id: 3, name: "Bose QuietComfort Ultra Bluetooth Headphones", price: 429.00 },
+            { id: 4, name: "Apple Watch Ultra 2", price: 734.89 },
+            { id: 5, name: "Samsung Galaxy Tab S10 Ultra", price: 1599.99 },
+            { id: 6, name: "JBL Xtreme 3", price: 329.85 },
+            { id: 7, name: "PlayStation®5", price: 499.00 },
+            { id: 8, name: "DJI Mini 3 Pro", price: 899.99 },
+            { id: 9, name: "SAMSUNG 55-Inch Class Neo QLED", price: 1600.00 }
+        ];
+
+        // Function to generate the invoice
+        function generateInvoice() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+            if (cart.length === 0) {
+                document.getElementById("invoiceDetails").innerHTML = "Your cart is empty.";
+                return;
+            }
+
+            let invoiceDetails = "Invoice Summary:<br>";
+            invoiceDetails += "Invoice Date: " + formatDate(new Date()) + "<br><br>"; // Added invoice date
+            let subtotal = 0;
+            let itemCount = {};
+
+            // Count quantities of each product in the cart
+            cart.forEach(product => {
+                itemCount[product.id] = itemCount[product.id] ? itemCount[product.id] + 1 : 1;
+            });
+
+            // Display product details and calculate subtotal
+            Object.keys(itemCount).forEach(productId => {
+                const product = products.find(p => p.id == productId); 
+                const quantity = itemCount[productId];
+                const totalProductPrice = product.price * quantity;
+                invoiceDetails += `${product.name} (x${quantity}): $${totalProductPrice.toFixed(2)}<br>`;
+                subtotal += totalProductPrice;
+            });
+
+            const tax = subtotal * 0.15; // 15% tax
+            const grandTotal = subtotal + tax;
+
+            // Display totals
+            invoiceDetails += `<br>Subtotal: $${subtotal.toFixed(2)}<br>`;
+            invoiceDetails += `Tax (15%): $${tax.toFixed(2)}<br>`;
+            invoiceDetails += `<strong>Total: $${grandTotal.toFixed(2)}</strong><br>`;
+
+            document.getElementById("invoiceDetails").innerHTML = invoiceDetails; 
+        }
+
+        window.onload = generateInvoice; // Call generateInvoice when the page loads
+
+        // Cancel the cart and go back to the products page
+        function cancelCart() {
+            localStorage.removeItem('cart'); // Clear the cart
+            alert("Cart has been cleared.");
+            window.location.href = "products.html";
+        }
+
+        // Exit the page (log out and redirect to the login page)
+        function exitPage() {
+            localStorage.removeItem('cart'); 
+            alert("You have exited. Returning to login page.");
+            window.location.href = "login.html"; 
+        }
+    </script>
+</body>
+</html>
+

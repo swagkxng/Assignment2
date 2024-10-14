@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - TechGear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your updated CSS -->
+</head>
+<body>
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+        <div class="product" id="product1">
+            <img src="img/product1.jpg" alt="Iphone 16">
+            <p>Iphone 16</p>
+            <p>Price: $799.99</p>
+            <p class="description">The latest iPhone with an A16 chip and an improved camera.</p>
+            <button onclick="addToCart(1)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/GDlkCkcIqTs" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product2">
+            <img src="img/product2.jpg" alt="ASUS ROG G16 (2024)">
+            <p>ASUS ROG G16 (2024)</p>
+            <p>Price: $1399.99</p>
+            <p class="description">A powerful gaming laptop designed for high performance.</p>
+            <button onclick="addToCart(2)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/CFgr11p2ST0" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product3">
+            <img src="img/product3.jpg" alt="Bose QuietComfort Ultra Bluetooth Headphones">
+            <p>Bose QuietComfort Ultra Bluetooth Headphones</p>
+            <p>Price: $429.00</p>
+            <p class="description">Noise-canceling headphones with superior sound quality.</p>
+            <button onclick="addToCart(3)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/Jo3kgR_48qo" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product4">
+            <img src="img/product4.jpg" alt="Apple Watch Ultra 2">
+            <p>Apple Watch Ultra 2</p>
+            <p>Price: $734.89</p>
+            <p class="description">The ultimate smartwatch for fitness and health tracking.</p>
+            <button onclick="addToCart(4)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/5Js8yqVoySE" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product5">
+            <img src="img/product5.jpg" alt="Samsung Galaxy Tab S10 Ultra">
+            <p>Samsung Galaxy Tab S10 Ultra</p>
+            <p>Price: $1599.99</p>
+            <p class="description">A high-performance tablet with a stunning display.</p>
+            <button onclick="addToCart(5)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/F4Surkms-gg" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product6">
+            <img src="img/product6.jpg" alt="JBL Xtreme 3">
+            <p>JBL Xtreme 3</p>
+            <p>Price: $329.85</p>
+            <p class="description">Portable Bluetooth speaker with powerful sound.</p>
+            <button onclick="addToCart(6)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/id3G4tGaDt0" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product7">
+            <img src="img/product7.jpg" alt="PlayStation®5">
+            <p>PlayStation®5</p>
+            <p>Price: $499.00</p>
+            <p class="description">The next-generation gaming console with stunning graphics.</p>
+            <button onclick="addToCart(7)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/cxXvYJyBlc4" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product8">
+            <img src="img/product8.jpg" alt="DJI Mini 3 Pro">
+            <p>DJI Mini 3 Pro</p>
+            <p>Price: $899.99</p>
+            <p class="description">A compact drone with advanced features for aerial photography.</p>
+            <button onclick="addToCart(8)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/aOwTUgqUfH8" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="product" id="product9">
+            <img src="img/product9.jpg" alt="SAMSUNG 55-Inch Class Neo QLED">
+            <p>SAMSUNG 55-Inch Class Neo QLED</p>
+            <p>Price: $1600.00</p>
+            <p class="description">A stunning 55-inch 4K television for an immersive viewing experience.</p>
+            <button onclick="addToCart(9)">Add to Cart</button>
+            <iframe src="https://www.youtube.com/embed/uip0obrQc1w" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="checkoutBtn" onclick="checkout()">Checkout</button>
+        <button id="cancelBtn" onclick="cancelCart()">Cancel</button>
+        <button id="exitBtn" onclick="exitPage()">Exit</button>
+    </div>
+
+    <script>
+        // Products array
+        const products = [
+            { id: 1, name: "Iphone 16", price: 799.99 },
+            { id: 2, name: "ASUS ROG G16 (2024)", price: 1399.99 },
+            { id: 3, name: "Bose QuietComfort Ultra Bluetooth Headphones", price: 429.00 },
+            { id: 4, name: "Apple Watch Ultra 2", price: 734.89 },
+            { id: 5, name: "Samsung Galaxy Tab S10 Ultra", price: 1599.99 },
+            { id: 6, name: "JBL Xtreme 3", price: 329.85 },
+            { id: 7, name: "PlayStation®5", price: 499.00 },
+            { id: 8, name: "DJI Mini 3 Pro", price: 899.99 },
+            { id: 9, name: "SAMSUNG 55-Inch Class Neo QLED", price: 1600.00 }
+        ];
+
+        // Add to Cart function
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${product.name} added to cart!`);
+            }
+        }
+
+        // Checkout function
+        function checkout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+            window.location.href = "invoice.html";
+        }
+
+        // Cancel and Exit functions
+        function cancelCart() {
+            localStorage.removeItem('cart');
+            alert("Cart has been cleared.");
+            window.location.href = "products.html";
+        }
+
+        function exitPage() {
+            localStorage.removeItem('cart');
+            alert("You have exited. Returning to login page.");
+            window.location.href = "login.html"; // Change this to your login page URL
+        }
+    </script>
+</body>
+</html>
+
+
