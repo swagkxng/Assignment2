@@ -52,7 +52,7 @@
             }
 
             let invoiceDetails = "Invoice Summary:<br>";
-            invoiceDetails += "Invoice Date: " + formatDate(new Date()) + "<br><br>"; // Added invoice date
+            invoiceDetails += "Invoice Date: " + formatDate(new Date()) + "<br><br>"; 
             let subtotal = 0;
             let itemCount = {};
 
@@ -81,16 +81,16 @@
             document.getElementById("invoiceDetails").innerHTML = invoiceDetails; 
         }
 
-        window.onload = generateInvoice; // Call generateInvoice when the page loads
+        window.onload = generateInvoice; 
 
         // Cancel the cart and go back to the products page
         function cancelCart() {
-            localStorage.removeItem('cart'); // Clear the cart
+            localStorage.removeItem('cart'); 
             alert("Cart has been cleared.");
             window.location.href = "products.html";
         }
 
-        // Exit the page (log out and redirect to the login page)
+        // Exit the page 
         function exitPage() {
             localStorage.removeItem('cart'); 
             alert("You have exited. Returning to Home page.");
@@ -99,4 +99,3 @@
     </script>
 </body>
 </html>
-
