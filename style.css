@@ -1,15 +1,15 @@
 /* General Body Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #dfe9f3, #91a3e3); /* Blue color gradient */
+    background: linear-gradient(135deg, #dfe9f3, #91a3e3); 
     margin: 0;
     padding: 0;
 }
 
 h2 {
     text-align: center;
-    background-color: #0056b3; /* Deep blue */
-    color: white; /* Changed to white */
+    background-color: #0056b3; 
+    color: white; 
     padding: 20px;
     margin: 0;
     font-size: 36px;
@@ -22,40 +22,40 @@ h2 {
     width: 400px;
     margin: 100px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.9); 
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    text-align: center; /* Center align text */
+    text-align: center; 
 }
 
 .login-container h2 {
-    margin-bottom: 20px; /* Space below the title */
+    margin-bottom: 20px; 
 }
 
 input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0; /* Space around inputs */
+    margin: 10px 0; 
     border-radius: 4px;
     border: 1px solid #ccc;
-    font-size: 16px; /* Increased font size for inputs */
+    font-size: 16px; 
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background: linear-gradient(45deg, #4285f4, #34a853); /* Blue and green gradient */
+    background: linear-gradient(45deg, #4285f4, #34a853); 
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: bold; /* Make the font bold */
-    font-size: 18px; /* Increase font size */
+    font-weight: bold; 
+    font-size: 18px; 
     transition: background 0.3s ease;
 }
 
 button:hover {
-    background: linear-gradient(45deg, #34a853, #4285f4); /* Reverse gradient on hover */
+    background: linear-gradient(45deg, #34a853, #4285f4); 
 }
 
 /* Product Grid Styles */
@@ -73,7 +73,7 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px; /* Increased width */
+    width: 500px; 
     margin: 20px;
     padding: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -86,9 +86,9 @@ button:hover {
 
 .product img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Set a maximum height to prevent overflow */
-    object-fit: contain; /* Ensure the entire image is visible without cropping */
+    height: auto; 
+    max-height: 300px; 
+    object-fit: contain; 
     border-radius: 8px;
 }
 
@@ -99,8 +99,8 @@ button:hover {
 }
 
 .product .description {
-    font-size: 14px; /* Smaller font for description */
-    color: #666; /* Slightly lighter color for description text */
+    font-size: 14px; 
+    color: #666; 
     margin-bottom: 20px;
 }
 
@@ -108,7 +108,7 @@ button:hover {
     margin-top: 10px;
     display: block;
     width: 100%;
-    height: 250px; /* Increased iframe height */
+    height: 250px; 
     border-radius: 8px;
 }
 
@@ -120,7 +120,7 @@ button:hover {
 }
 
 button {
-    background: linear-gradient(45deg, #4285f4, #34a853); /* Blue and green gradient */
+    background: linear-gradient(45deg, #4285f4, #34a853); 
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -134,7 +134,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(45deg, #34a853, #4285f4); /* Reverse gradient on hover */
+    background: linear-gradient(45deg, #34a853, #4285f4); 
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -142,7 +142,7 @@ button:hover {
 #errorMsg {
     color: red;
     margin-top: 10px;
-    font-weight: bold; /* Make error message bold */
+    font-weight: bold; 
 }
 
 /* Invoice Page Styles */
@@ -162,6 +162,6 @@ strong {
 
 /* Invoice Header Style */
 h2 {
-    color: white; /* Changed to white */
+    color: white; 
     text-align: center; 
 }
