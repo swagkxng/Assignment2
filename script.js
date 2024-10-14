@@ -24,15 +24,15 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 // Products data
 const products = [
-    { id: 1, name: "Smartphone", price: 699 },
-    { id: 2, name: "Laptop", price: 999 },
-    { id: 3, name: "Headphones", price: 199 },
-    { id: 4, name: "Smartwatch", price: 299 },
-    { id: 5, name: "Tablet", price: 499 },
-    { id: 6, name: "Bluetooth Speaker", price: 149 },
-    { id: 7, name: "Gaming Console", price: 399 },
-    { id: 8, name: "Drone", price: 799 },
-    { id: 9, name: "Smart TV", price: 1199 }
+    { id: 1, name: "Iphone 16", price: 799.99 },
+    { id: 2, name: "ASUS ROG G16 (2024)", price: 1399.99 },
+    { id: 3, name: "Bose QuietComfort Ultra Bluetooth Headphones", price: 429.00 },
+    { id: 4, name: "Apple Watch Ultra 2", price: 734.89 },
+    { id: 5, name: "Samsung Galaxy Tab S10 Ultra", price: 1599.99 },
+    { id: 6, name: "JBL Xtreme 3", price: 329.85 },
+    { id: 7, name: "PlayStation®5", price: 499.00 },
+    { id: 8, name: "DJI Mini 3 Pro", price: 899.99 },
+    { id: 9, name: "SAMSUNG 55-Inch Class Neo QLED", price: 1600.00 }
 ];
 
 // Function to add product to the cart
